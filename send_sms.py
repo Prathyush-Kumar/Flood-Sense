@@ -10,8 +10,8 @@ import os
 from twilio.rest import Client
 
 # Load from environment variables or replace with your actual credentials
-ACCOUNT_SID = "ACcef9cf6cf67303647a5a4fb19eae2250"
-AUTH_TOKEN = "9731abb52d09a4e54d73c0ddea4e4316"
+ACCOUNT_SID = "" #Twilio Account SID
+AUTH_TOKEN = ""  #Twilio Account Token
 
 
 def send_sms(message: str) -> str:
@@ -31,8 +31,8 @@ def send_sms(message: str) -> str:
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
     msg = client.messages.create(
         body=message,
-        from_="+17407574886",
-        to="+918904636823"
+        from_="", #Twilio Account Trial Number
+        to="" # Your Phone Number
     )
     print(f"[send_sms] SMS sent. SID: {msg.sid}")
     return msg.sid
